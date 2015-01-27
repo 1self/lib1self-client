@@ -12,6 +12,6 @@ deploy:
   - dist/lib1self-client.v0.1.4.js
   - dist/lib1self-client.v0.1.4.min.js
   on:
-  	tags: true
+    tags: true
     repo: 1self/lib1self-client
   	all_branches: true
