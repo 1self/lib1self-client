@@ -14,4 +14,4 @@ deploy:
   on:
     tags: true
     repo: 1self/lib1self-client
-  	all_branches: true
+    all_branches: true
