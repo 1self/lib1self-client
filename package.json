@@ -1,9 +1,9 @@
 {
   "name": "lib1self-client",
-  "version": "0.1.6",
-  "homepage": "http://www.youtube.com/watch?v=cDuG95DXbw8",
+  "version": "0.2.0",
+  "homepage": "http://www.1self.co",
   "author": {
-    "name": "Obi-Wan Kenobi"
+    "name": "Ed Sykes"
   },
   "dependencies": {},
   "devDependencies": {
