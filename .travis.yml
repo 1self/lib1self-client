@@ -15,7 +15,7 @@ deploy:
   api_key:
     secure: sM7+YbZfH/mB48dGjF4X1hQmTFqlLGpX3/L7g4PgBBSr+qjJC+Wkdz2fSmICpWEaMWJMj1tpAfUcbGBrNxONl9m2EE7cqhw3yCAxXDpUVV2y/SFM7WVnsCTn0XPzCplR8Nze3gVcwK/mhfTOTfR2pPJFgCU97FYxQHC9iDxcGDA=
   file_glob: true
-  file: "${DEBUG_FILE}"
+  file: ${DEBUG_FILE}
   on:
     tags: true
     repo: 1self/lib1self-client
