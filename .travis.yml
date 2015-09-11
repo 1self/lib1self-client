@@ -7,13 +7,14 @@ before_script: grunt
 before_deploy:
   - ls dist
   - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
-  - echo debug file is ${DEBUG_FILE}
+  - echo deploying debug file $DEBUG_FILE to github releases
   - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
-  - echo release file is ${REL_FILE}
+  - echo deploying release file $REL_FILE to github releases
 deploy:
   provider: releases
   api_key:
     secure: sM7+YbZfH/mB48dGjF4X1hQmTFqlLGpX3/L7g4PgBBSr+qjJC+Wkdz2fSmICpWEaMWJMj1tpAfUcbGBrNxONl9m2EE7cqhw3yCAxXDpUVV2y/SFM7WVnsCTn0XPzCplR8Nze3gVcwK/mhfTOTfR2pPJFgCU97FYxQHC9iDxcGDA=
+  file_glob: true
   file:
   - ${DEBUG_FILE}
   - ${REL_FILE}
