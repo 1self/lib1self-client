@@ -4,13 +4,16 @@ node_js:
 before_install: npm install -g grunt-cli
 install: npm install
 before_script: grunt
+before_deploy:
+  - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
+  - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
 deploy:
   provider: releases
   api_key:
     secure: sM7+YbZfH/mB48dGjF4X1hQmTFqlLGpX3/L7g4PgBBSr+qjJC+Wkdz2fSmICpWEaMWJMj1tpAfUcbGBrNxONl9m2EE7cqhw3yCAxXDpUVV2y/SFM7WVnsCTn0XPzCplR8Nze3gVcwK/mhfTOTfR2pPJFgCU97FYxQHC9iDxcGDA=
   file:
-  - dist/lib1self-client.v0.1.6.js
-  - dist/lib1self-client.v0.1.6.min.js
+  - ${DEBUG_FILE}
+  - ${REL_FILE}
   on:
     tags: true
     repo: 1self/lib1self-client
