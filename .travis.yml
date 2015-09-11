@@ -3,7 +3,10 @@ node_js:
 - 0.12
 before_install: npm install -g grunt-cli
 install: npm install
-before_script: grunt
+before_script: 
+  - grunt
+  - ls dist/lib1self-client*.js
+  - ls dist/lib1self-client*.js | grep -e "v\d+.\d+.\d+.js"
 before_deploy:
   - export ENV_TEST=$(echo "this is a test")
   - echo $ENV_TEST
