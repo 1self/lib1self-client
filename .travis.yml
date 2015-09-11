@@ -6,7 +6,9 @@ install: npm install
 before_script: grunt
 before_deploy:
   - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
+  - echo debug file is ${DEBUG_FILE}
   - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
+  - echo release file is ${REL_FILE}
 deploy:
   provider: releases
   api_key:
