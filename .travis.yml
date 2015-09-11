@@ -5,7 +5,10 @@ before_install: npm install -g grunt-cli
 install: npm install
 before_script: grunt
 before_deploy:
+  - export ENV_TEST=$(echo "this is a test")
+  - echo $ENV_TEST
   - ls dist
+  - ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js"
   - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
   - echo "deploying debug file $DEBUG_FILE to github releases"
   - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
