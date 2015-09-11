@@ -5,6 +5,7 @@ before_install: npm install -g grunt-cli
 install: npm install
 before_script: grunt
 before_deploy:
+  - ls dist
   - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
   - echo debug file is ${DEBUG_FILE}
   - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
