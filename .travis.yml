@@ -5,7 +5,6 @@ before_install: npm install -g grunt-cli
 install: npm install
 before_script: 
   - grunt
-  - grep
   - ls dist/lib1self-client*.js
   - ls dist/lib1self-client*.js | grep -P "v\d+.\d+.\d+.js"
 before_deploy:
