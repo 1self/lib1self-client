@@ -7,15 +7,15 @@ before_script:
   - grunt
   - grep
   - ls dist/lib1self-client*.js
-  - ls dist/lib1self-client*.js | grep -e "v\d+.\d+.\d+.js"
+  - ls dist/lib1self-client*.js | grep -P "v\d+.\d+.\d+.js"
 before_deploy:
   - export ENV_TEST=$(echo "this is a test")
   - echo $ENV_TEST
   - ls dist
-  - ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js"
-  - export DEBUG_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.js")
+  - ls dist/lib1self-client*.js | grep -P "v\d+.\d+.\d+.js"
+  - export DEBUG_FILE=$(ls dist/lib1self-client*.js | grep -P "v\d+.\d+.\d+.js")
   - echo "deploying debug file $DEBUG_FILE to github releases"
-  - export REL_FILE=$(ls dist/lib1self-client*.js | egrep "v\d+.\d+.\d+.min.js")
+  - export REL_FILE=$(ls dist/lib1self-client*.js | grep -P "v\d+.\d+.\d+.min.js")
   - echo "deploying release file $REL_FILE to github releases"
 deploy:
   provider: releases
